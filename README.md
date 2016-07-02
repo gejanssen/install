@@ -1,6 +1,6 @@
 # First steps after installing a raspberry pi
 
-# Package management
+## Package management
 Usage:
 	sudo bash update.sh
 	sudo bash packages.sh
@@ -11,7 +11,7 @@ adding new packages
 adding vim etc.
 
 
-# Creating users
+## Creating users
 import ssh keys
 creating users
 editing visudo
@@ -19,12 +19,14 @@ editing visudo
 usage:
 	sudo bash users.sh
 
-# Install Apache
+Todo, iets met wachtwoorden.
+
+## Install Apache
 
 usage:
 	sudo bash apache.sh
 
-# Install mariadb
+## Install mariadb
 
 usage:
 	sudo bash mariadb.sh
