@@ -22,6 +22,7 @@ De backup gaat over ssh dus op de pi moet een key gegenereerd worden.
 '''
 
 ##config
+config file van ssh: ~/.ssh/config
 
 '''
 	vi /root/.ssh/config
