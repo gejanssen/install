@@ -3,6 +3,9 @@
 Voorwaarden:
 - rsync-backup.sh in root
 - rsync-exclude.txt in root
+- rsa key aangemaakt
+- config in .ssh voor juiste user
+- crontab
 
 ##Crontab
 	# Regeltje toevoegen aan crontab via crontab -e
@@ -11,9 +14,9 @@ Voorwaarden:
 De backup gaat over ssh dus op de pi moet een key gegenereerd worden.
 
 ```
-	root@rpi-b:~# ssh-keygen 
+	root@rpi-b:~# **ssh-keygen**
 	Generating public/private rsa key pair.
-	Enter file in which to save the key (/root/.ssh/id_rsa): /root/.ssh/id_rsa_backup
+	Enter file in which to save the key (/root/.ssh/id_rsa): **/root/.ssh/id_rsa_backup**
 	Enter passphrase (empty for no passphrase): 
 	Enter same passphrase again: 
 	Your identification has been saved in /root/.ssh/id_rsa_backup.
