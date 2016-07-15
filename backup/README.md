@@ -88,7 +88,7 @@ Logfile waar de output naartoe moet.
 
 
 
-# Logrotate
+## Logrotate
 Kopieer het rsync logrotate config dingetje op de juiste plek.
 
 ```
