@@ -41,3 +41,60 @@ deze key moet bij de backup-server in de backup user dir gezet worden
 	vi /home/backup/.ssh/authorized_keys
 	[insert id_rsa_backup.pub]
 ```
+
+## Explanation
+
+Commandline:
+```
+	/usr/bin/rsync --exclude-from=/root/rsync-exclude.txt -avhPS --delete --log-file=/var/log/rsync.log / backup@ftth.gejanssen.com:/home/backup/rpipce
+```
+
+rsync [options] [source] [destination]
+
+Options
+- --exclude-from=/root/rsync-exclude.txt
+- a
+- v
+- h
+- P
+- S 
+- --delete
+- --log-file=/var/log/rsync.log
+
+
+### --exclude-from=/root/rsync-exclude.txt
+File that includes all dir's that do not have to be synced
+
+### -a
+Archive mode
+
+### -v
+Verbose mode
+
+### -h
+Output numbers in human readable format
+
+### -P
+Progess bar (same as --progress)
+
+### -S
+Handle sparse file efficiently
+
+### --delete
+delete extraneous files from dest dirs
+
+### --log-file=/var/log/rsync.log
+Logfile waar de output naartoe moet.
+
+
+
+# Logrotate
+Kopieer het rsync logrotate config dingetje op de juiste plek.
+
+```
+	cp rsync /etc/logrotate.d/
+```
+of
+```
+	./logrotate.sh
+```
