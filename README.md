@@ -31,4 +31,13 @@ usage:
 usage:
 	sudo bash mariadb.sh
 
+## Serial
+Bij een raspberry Pi 3 doet de serial raar.
+Hiervoor moet je een fixed core freq opgeven in de /boot/config.txt
+"core_freq=250"
+
+usage
+```
+	$ sudo ./rpib3.sh
+```
 
