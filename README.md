@@ -9,6 +9,7 @@ update packages
 removing packages
 adding new packages
 adding vim etc.
+mogelijk sudo update-alternatives --config vi
 
 
 ## Creating users
