@@ -1,3 +1,4 @@
+set -x
 sudo apt-get -y install vim
 sudo apt-get -y install ssh-import-id
 

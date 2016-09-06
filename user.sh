@@ -1,3 +1,4 @@
+set -x
 sudo useradd -c "Ge Janssen" -d /home/gej -m -s /bin/bash gej
 sudo useradd -c "Jos Nouwen" -d /home/josn -m -s /bin/bash josn
 

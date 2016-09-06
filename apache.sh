@@ -1,1 +1,2 @@
-apt-get --assume-yes install apache2 php5 php-pear 
+set -x
+sudo apt --assume-yes install apache2 php5 php-pear 

@@ -2,8 +2,10 @@
 
 ## Package management
 Usage:
+```
 	sudo bash update.sh
 	sudo bash packages.sh
+```
 
 update packages
 removing packages
@@ -18,19 +20,25 @@ creating users
 editing visudo
 
 usage:
+```
 	sudo bash users.sh
+```
 
 Todo, iets met wachtwoorden.
 
 ## Install Apache
 
 usage:
+```
 	sudo bash apache.sh
+```
 
 ## Install mariadb
 
 usage:
+```
 	sudo bash mariadb.sh
+```
 
 ## Serial
 Bij een raspberry Pi 3 doet de serial raar.
