@@ -33,6 +33,34 @@ usage:
 	sudo bash apache.sh
 ```
 
+### Install Apache certificaat
+
+Kopeer het certificaat, de key en de root-bundle naar /etc/ssl/private
+Enable de ssl module
+```
+sudo a2enmod ssl
+```
+
+Enable de 000-default-ssl.conf
+```
+sudo ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/000-default-ssl.conf
+```
+
+maak de juiste koppeling naar de keys en certificaten
+
+vi 000-default-ssl.conf
+```
+	SSLCertificateFile	/etc/ssl/private/home.graat.info.crt
+	SSLCertificateKeyFile	/etc/ssl/private/home.graat.info.key
+	SSLCACertificateFile	/etc/ssl/private/root_bundle.crt
+```
+
+Restart de webserver
+
+```
+sudo systemctl restart apache2.service
+```
+
 ## Install mariadb
 
 usage:
