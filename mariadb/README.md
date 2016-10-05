@@ -17,3 +17,10 @@ of
 ```
 5 0 * * *       /home/pi/install/mariadb/backup_db.sh
 ```
+
+En natuurlijk de restore:
+
+```
+$ gunzip dump-2016-10-05_01-00-02.sql.gz 
+$ mysql < dump-2016-10-05_01-00-02.sql
+```

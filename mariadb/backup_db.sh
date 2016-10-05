@@ -7,3 +7,6 @@
 # Denk aan de correcte .my.cnf
 /usr/bin/mysqldump --all-databases | /bin/gzip -9 > /root/dump-$( date '+%Y-%m-%d_%H-%M-%S' ).sql.gz
 
+# Eventuele restore
+# gunzip dump-2016-10-05_01-00-02.sql.gz
+# mysql < dump-2016-10-05_01-00-02.sql
