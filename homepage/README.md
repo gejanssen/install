@@ -1,0 +1,21 @@
+
+### hardware revision and CPU info
+
+```
+pi@rpi-zw2:~/install/homepage $ cat /proc/cpuinfo 
+processor	: 0
+model name	: ARMv6-compatible processor rev 7 (v6l)
+BogoMIPS	: 997.08
+Features	: half thumb fastmult vfp edsp java tls 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xb76
+CPU revision	: 7
+
+Hardware	: BCM2835
+Revision	: 9000c1
+Serial		: 000000001f6f969e
+pi@rpi-zw2:~/install/homepage $
+```
+
