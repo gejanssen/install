@@ -10,6 +10,13 @@ Resolving deltas: 100% (51/51), done.
 Checking connectivity... done.
 pi@raspberrypi:~ $ 
 ```
+### Locale
+installing nl locales
+
+usage:
+```
+./locale.sh
+```
 
 ## Package management
 Usage:
@@ -99,4 +106,51 @@ root@raspberrypi:/home/pi/install# vi /etc/default/xymon-client
 root@raspberrypi:/home/pi/install# systemctl restart xymon-client.service
 root@raspberrypi:/home/pi/install#
 ```
+
+### Autoconfig
+
+From the documentation of raspberry pi:
+or headless setup, SSH can be enabled by placing a file named 'ssh', without any extension, onto the boot partition of the SD card. When the Pi boots, it looks for the 'ssh' file; if it is found, SSH is enabled and then the file is deleted. The content of the file doesn't matter: it could contain either text or nothing at all.
+
+```
+echo ; > /boot/ssh
+```
+
+There are some great answers here, but many are out of date. Since May 2016, Raspbian has been able to copy wifi details from /boot/wpa_supplicant.conf into /etc/wpa_supplicant/wpa_supplicant.conf to automatically configure wireless network access:
+
+    If a wpa_supplicant.conf file is placed into the /boot/ directory, this will be moved to the /etc/wpa_supplicant/ directory the next time the system is booted, overwriting the network settings; this allows a Wifi configuration to be preloaded onto a card from a Windows or other machine that can only see the boot partition.
+
+    — The latest update to Raspbian - Raspberry Pi
+
+Since the /boot partition is accessible by any computer with an SD card reader, wifi configuration is now much simpler.
+
+A skeleton /etc/wpa_supplicant/wpa_supplicant.conf file can be as little as:
+
+network={
+    ssid="YOUR_SSID"
+    psk="YOUR_PASSWORD"
+    key_mgmt=WPA-PSK
+}
+
+Hostname
+
+
+/etc/hostname
+en
+/etc/hosts
+
+
+Edit the os/Rasbian/os.json file. It should look like this :
+
+{
+  "name": "Raspbian",
+  "version": "wheezy",
+  "release_date": "2015-02-16",
+  "kernel": "3.18",
+  "description": "A community-created port of Debian wheezy, optimised for the Raspberry Pi",
+  "url": "http://www.raspbian.org/",
+  "username": "pi",
+  "password": "raspberry",
+  "supported_hex_revisions": "2,3,4,5,6,7,8,9,d,e,f,10,11,12,14,19,1040,1041"
+}
 

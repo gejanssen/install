@@ -1,6 +1,6 @@
 set -x
-sudo apt-get -y install vim
-sudo apt-get -y install ssh-import-id
+sudo apt-get -y install vim screen ssh-import-id
+#sudo apt-get -y install ssh-import-id
 
 
 # verwijderen van oude software
