@@ -107,6 +107,20 @@ root@raspberrypi:/home/pi/install# systemctl restart xymon-client.service
 root@raspberrypi:/home/pi/install#
 ```
 
+## Nexdock
+Om automatisch de nexdock bluetooth keyboard/mouse te connecten:
+
+```
+#echo "connect 0C:FC:83:00:1E:B6" | bluetoothctl
+```
+
+oftewel
+
+```
+./nexdock.sh
+```
+
+
 ### Autoconfig
 
 From the documentation of raspberry pi:
