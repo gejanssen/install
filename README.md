@@ -46,6 +46,8 @@ Todo, iets met wachtwoorden.
 
 ## Install Apache
 
+Let op, bij Debian Stretch is de default php7.0, als je 5 wil, even editen.
+
 usage:
 ```
 sudo bash apache.sh

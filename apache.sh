@@ -1,5 +1,8 @@
 set -x
-sudo apt --assume-yes install apache2 php5 php-pear 
+# Debian jessie - PHP5
+#sudo apt --assume-yes install apache2 php5 php-pear 
+# Debian Stretch - PHP 7.0
+sudo apt --assume-yes install apache2 php7.0 php-pear 
 
 
 
