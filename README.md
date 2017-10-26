@@ -41,9 +41,18 @@ usage:
 ```
 sudo bash users.sh
 ```
+Automatisch installeren van ssh-import-id
 
 Todo, iets met wachtwoorden.
 
+## Enable IO
+Enable SPI
+Enable 1Wire
+Enable I2C
+
+```
+	sudo io.sh
+```
 ## Install Apache
 
 Let op, bij Debian Stretch is de default php7.0, als je 5 wil, even editen.
@@ -136,7 +145,7 @@ There are some great answers here, but many are out of date. Since May 2016, Ras
 
     If a wpa_supplicant.conf file is placed into the /boot/ directory, this will be moved to the /etc/wpa_supplicant/ directory the next time the system is booted, overwriting the network settings; this allows a Wifi configuration to be preloaded onto a card from a Windows or other machine that can only see the boot partition.
 
-    — The latest update to Raspbian - Raspberry Pi
+    The latest update to Raspbian - Raspberry Pi
 
 Since the /boot partition is accessible by any computer with an SD card reader, wifi configuration is now much simpler.
 
