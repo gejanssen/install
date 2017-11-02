@@ -131,6 +131,30 @@ oftewel
 ./nexdock.sh
 ```
 
+### Disable Wifi Raspberry Pi Zero W
+Ik heb een Pi met defekte wifi.
+
+The other thing I can think of is to disable the loading of the drivers for now:
+
+/etc/modprobe.d/raspi-blacklist.conf
+
+#wifi
+blacklist brcmfmac
+blacklist brcmutil
+#bt
+blacklist btbcm
+blacklist hci_uart
+
+or via config.txt
+
+for disable onboard WiFi and BT on Pi3 add to config.txt
+
+Code: Select all
+
+dtoverlay=pi3-disable-wifi
+dtoverlay=pi3-disable-bt
+
+
 
 ### Autoconfig
 
