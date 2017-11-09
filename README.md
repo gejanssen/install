@@ -130,6 +130,45 @@ oftewel
 ```
 ./nexdock.sh
 ```
+### Config serial over usb (Pi zero - otg poort serial)
+
+Found:
+https://gist.github.com/gbaman/50b6cca61dd1c3f88f41
+and
+https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a
+
+```
+echo "dtoverlay=dwc2" >> /boot/config.txt
+```
+
+cmdline.txt
+Insert modules-load=dwc2,g_serial after rootwait.
+
+and then:
+```
+sudo systemctl enable getty@ttyGS0.service
+```
+and
+```
+sudo systemctl start getty@ttyGS0.service
+```
+
+And then on my notebook
+
+```
+gej@pluto:~$ dmesg
+[ 9426.440495] usb 1-1.2: new high-speed USB device number 14 using ehci-pci
+[ 9426.808473] usb 1-1.2: new high-speed USB device number 15 using ehci-pci
+[ 9426.917912] usb 1-1.2: New USB device found, idVendor=0525, idProduct=a4a7
+[ 9426.917918] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[ 9426.917921] usb 1-1.2: Product: Gadget Serial v2.4
+[ 9426.917923] usb 1-1.2: Manufacturer: Linux 4.9.41+ with 20980000.usb
+[ 9426.919220] cdc_acm 1-1.2:2.0: ttyACM0: USB ACM device
+gej@pluto:~$
+
+gej@pluto:~$ cu -l /dev/ttyACM0 -s 115200 
+```
+
 
 ### Disable Wifi Raspberry Pi Zero W
 Ik heb een Pi met defekte wifi.
