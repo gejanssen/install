@@ -107,6 +107,21 @@ usage
 $ sudo ./rpib3.sh
 ```
 
+## Timezone
+
+Setting the timezone to europe/amsterdam
+
+```
+sudo rm /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
+```
+
+or
+
+```
+$ ./timezone.sh
+```
+
 ## Install Xymon Client
 ```
 ./xymon.sh
