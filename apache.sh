@@ -2,7 +2,16 @@ set -x
 # Debian jessie - PHP5
 #sudo apt --assume-yes install apache2 php5 php-pear 
 # Debian Stretch - PHP 7.0
-sudo apt --assume-yes install apache2 php7.0 php-pear 
+#sudo apt --assume-yes install apache2 php7.0 php-pear 
+
+if [ $( cat /etc/os-release | grep -c "stretch") -eq 2 ];
+then
+  echo Debian Stretch
+  sudo apt --assume-yes install apache2 php7.0 php-pear 
+else
+  echo Ouder dan stretch
+  sudo apt --assume-yes install apache2 php5 php-pear 
+fi
 
 
 
