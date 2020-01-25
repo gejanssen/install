@@ -1,0 +1,52 @@
+Debugging serial in a raspberry pi 4
+
+
+vcgencmd bootloader_config
+
+#Export config file
+
+cp /lib/firmware/raspberrypi/bootloader/beta/pieeprom-2019-09-10.bin pieeprom.bin
+rpi-eeprom-config pieeprom.bin > bootconf.txt
+
+vi bootconf.txt
+
+# Example change. If you have a UART cable then setting BOOT_UART=1 will help debug boot issues
+BOOT_UART=1
+
+#Create the binary
+rpi-eeprom-config --out pieeprom-new.bin --config bootconf.txt pieeprom.bin
+
+#Flash the new eeprom && reboot
+
+sudo rpi-eeprom-update -d -f ./pieeprom-new.bin
+sudo reboot
+
+
+updating the on board flash
+
+Source:
+https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md
+https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711_bootloader_config.md
+
+The correct use of a serial port is then /dev/Serial0
+
+root@rpib42g:~# ls -l /dev/serial*
+lrwxrwxrwx 1 root root 5 Jan 25 22:22 /dev/serial0 -> ttyS0
+lrwxrwxrwx 1 root root 7 Jan 25 22:22 /dev/serial1 -> ttyAMA0
+
+Test if the ports are GPIO or Serial
+
+root@rpib42g:~# raspi-gpio get 14-15
+GPIO 14: level=1 fsel=2 alt=5 func=TXD1 pull=NONE
+GPIO 15: level=1 fsel=2 alt=5 func=RXD1 pull=UP
+
+These are serial.
+
+J8:
+   3V3  (1) (2)  5V    
+ GPIO2  (3) (4)  5V    
+ GPIO3  (5) (6)  GND   
+ GPIO4  (7) (8)  GPIO14 (TXD)
+   GND  (9) (10) GPIO15 (RXD)
+
+
