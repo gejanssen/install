@@ -263,7 +263,7 @@ Edit the os/Rasbian/os.json file. It should look like this :
 
 Edit this in your boot.txt
 ```
-pi02]
+[pi02]
  # entry for zero 2 W
  # First: check if bcm2710-rpi-zero-2.dtb exists.
  # if not: cp /boot/bcm2710-rpi-3-b.dtb /boot/bcm2710-rpi-zero-2.dtb
