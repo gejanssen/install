@@ -212,6 +212,8 @@ dtoverlay=pi3-disable-bt
 
 ### Autoconfig
 
+(Update, download rpi-imager in linux and use ctrl-shift-x to edit advanced settings)
+
 From the documentation of raspberry pi:
 or headless setup, SSH can be enabled by placing a file named 'ssh', without any extension, onto the boot partition of the SD card. When the Pi boots, it looks for the 'ssh' file; if it is found, SSH is enabled and then the file is deleted. The content of the file doesn't matter: it could contain either text or nothing at all.
 
@@ -256,4 +258,16 @@ Edit the os/Rasbian/os.json file. It should look like this :
   "password": "raspberry",
   "supported_hex_revisions": "2,3,4,5,6,7,8,9,d,e,f,10,11,12,14,19,1040,1041"
 }
+
+### For the raspberry Pi zero 2, 64bits kernel
+
+Edit this in your boot.txt
+```
+pi02]
+ # entry for zero 2 W
+ # First: check if bcm2710-rpi-zero-2.dtb exists.
+ # if not: cp /boot/bcm2710-rpi-3-b.dtb /boot/bcm2710-rpi-zero-2.dtb
+arm_64bit=1
+[all]
+```
 
