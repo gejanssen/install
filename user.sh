@@ -14,5 +14,6 @@ sudo useradd -c "Jos Nouwen" -d /home/josn -m -s /bin/bash josn
 sudo su - gej -c "ssh-import-id gej"
 sudo su - josn -c "ssh-import-id josn"
 
-sudo echo 'gej	ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-sudo echo 'josn	ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+
+echo 'gej ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers.d/gej > /dev/null
+echo 'josn ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers.d/josn > /dev/null
